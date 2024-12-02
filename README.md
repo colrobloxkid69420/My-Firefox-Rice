@@ -14,4 +14,5 @@ This will probably not be enough. Maybe need to change some RGB values too, or o
 
 ## How to make websites fit the theme?
 
-Well I have a stylus script thingy but I have yet to upload it anywhere and it is kinda like make-do. ~~(just like this rice)~~
+See [this](https://codeberg.org/colrobloxkid69420/Stylus) for codeberg or [this](https://github.com/colrobloxkid69420/Stylus) for github.
+It is kinda make-do though. ~~(just like this rice)~~
