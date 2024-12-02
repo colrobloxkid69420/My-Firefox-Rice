@@ -1,0 +1,94 @@
+/* SPDX-License-Identifier: MPL-2.0 */
+/* SPDX-FileCopyrightText: 2024 awwpotato */
+
+@import url("browser/main.css");
+@import url("vars.css");
+
+:root {
+    @media not (-moz-bool-pref: "uc.tweak.no-panel-hint") {
+        --uc-panel-hint: color-mix( in srgb, var(--toolbarbutton-icon-fill), transparent 75%);
+    }
+
+    --uc-bg-opaque: light-dark(rgb(205, 214, 244), rgb(30, 30, 46));
+    @media (-moz-platform: linux) {
+        --uc-bg-opaque: ActiveCaption;
+    }
+    --uc-content-bg: transparent;
+    &[lwtheme="true"] {
+        --uc-bg-opaque: var(--lwt-accent-color);
+        @media not (-moz-bool-pref: "uc.tweak.translucency") {
+            --uc-content-bg: var(--newtab-background-color);
+        }
+    }
+    
+    --uc-bg: var(--uc-bg-opaque);
+    --uc-bg-tran: var(--uc-bg-opaque);
+    --uc-bg-translucency: #1e1e2e99;
+    @media not (-moz-bool-pref: "uc.tweak.no-blur") {
+        --uc-bg-tran: var(--uc-bg-translucency);
+    } @media (-moz-bool-pref: "uc.tweak.translucency") {
+        --uc-bg: var(--uc-bg-translucency);
+    }
+}
+/* Skibidi change font for search and url and shit */
+#urlbar, #searchbar .searchbar-textbox{
+    font-family: Readex Pro !important;
+}
+.titlebar-buttonbox-container{ display:none !important;}
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] {
+    display: none !important;
+}
+#titlebar {
+visibility: collapse !important;
+}
+
+
+
+:root[inFullscreen] { margin-top: 0px !important; }
+/* :root[sizemode="maximized"] #navigator-toolbox{ margin-top: 8px } */
+
+:root[inFullscreen] #navigator-toolbox{
+    position: fixed !important;
+    display: block;
+    margin-top: 0 !important;
+    transition: transform 82ms 33ms linear, opacity 42ms 33ms linear !important;
+    transform-origin: top;
+    line-height: 0;
+    z-index: 1;
+}
+
+:root[inFullscreen] #navigator-toolbox > *{ line-height: normal }
+
+:root[inFullscreen] #navigator-toolbox,
+:root[inFullscreen] #navigator-toolbox > *{
+    width: 100vw;
+    -moz-appearance: none !important;
+}
+
+:root[inFullscreen] #navigator-toolbox:not(:focus-within):not(:hover){
+    transform: rotateX(88deg);
+    opacity: 0;
+}
+
+:root[inFullscreen]:not([customizing]) #navigator-toolbox::after {
+    height: 0;
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+:root[inFullscreen]:not([customizing]) #navigator-toolbox:focus-within::after,
+:root[inFullscreen]:not([customizing]) #navigator-toolbox:hover::after {
+    /*   height: 20px; */
+    visibility: hidden !important;
+    opacity: 0 !important;
+}
+
+
+:root[customizing] #navigator-toolbox{
+    position: relative !important;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+#PersonalToolbar[collapsed]{ margin-block-end: -7px }
