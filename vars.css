@@ -9,6 +9,8 @@
         --uc-mouseout-delay: 250ms;
     }
     
+    --player-bg-color: transparent !important;
+
     --uc-radius: 5px;
     --uc-button-radius: 5px;
     --uc-content-radius: 15px;

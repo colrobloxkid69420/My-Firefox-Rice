@@ -30,6 +30,9 @@
         --uc-bg: var(--uc-bg-translucency);
     }
 }
+#browser:not(.browser-toolbox-background) {
+background-color: transparent !important;
+}
 /* Skibidi change font for search and url and shit */
 #urlbar, #searchbar .searchbar-textbox{
     font-family: Readex Pro !important;
